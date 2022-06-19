@@ -13,6 +13,12 @@ const myArr = [
     name: 'Natalia',
     age: 48,
     favBand: 'Kurbasy'
+  },
+  {
+    name: 'Misa',
+    age: 28,
+    favBand: 'Giga',
+    favSong: 'Tsey son'
   }
 ];
 
@@ -51,4 +57,16 @@ const averageAge = () => {
   return middleAge;
 };
 
-console.log(averageAge());
+// console.log(averageAge());
+
+function getBandByName(name) {
+  const found = myArr.find(el => el.name == name);
+  if (found && found.favBand) {
+    return found.favBand;
+  } else {
+    return 'Not found';
+  }
+}
+
+console.log(getBandByName('Misa'));
+console.log(getBandByName('Mavka'));
